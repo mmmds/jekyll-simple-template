@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+    {% if page.redirect %} <meta http-equiv="Refresh" content="0; url=/"/> {% endif %}
+    {% if page.description %}<meta name="description" content="{{ page.description }}"/> {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <!-- generated with Jekyll and https://github.com/mmmds/jekyll-simple-template -->
+  </head>
+
+{% if page.redirect %}
+{% else %}
+  <body>
+	<div class="container">
+        <header>
+		<div id="logo">{{ site.name }}</div>	
+         	<nav>|
+            	<a href="{{ site.baseurl }}/">posts</a>
+				|
+            	<a href="{{ site.baseurl }}/projects/">projects</a>
+				|
+            	<a href="{{ site.baseurl }}/about/">about</a> |
+        	</nav>
+        </header>
+      </div>
+    </div>
+    <div id="main" role="main" class="container">
+      {{ content }}
+    </div>
+<footer><hr></footer>
+    {% include analytics.html %}
+  </body>
+{% endif %}
+</html>

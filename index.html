@@ -1,0 +1,12 @@
+---
+layout: default
+permalink:
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <div class="post_element">
+	<span class="post_list_date">{{ post.date | date: "%Y-%m-%d" }}:</span>{% if post.redirect %}{{ post.title }}<span class="ptr">-></span>{% for r in post.redirect limit:1  %}<a class="post-external-link" href="{{ r[1] }}">{{r[0]}}</a>{% endfor %}{% for r in post.redirect offset:1 %}, <a class="post-external-link" href="{{ r[1] }}">{{r[0]}}</a> {% endfor %}  {% else %}<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>{% endif %}
+    </div>
+  {% endfor %}
+</div>

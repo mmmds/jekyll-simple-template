@@ -1,0 +1,12 @@
+name: My Blog
+google_analytics: UA-XXXXXXX-1
+permalink: /:title/
+
+version: v1.2.0
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
